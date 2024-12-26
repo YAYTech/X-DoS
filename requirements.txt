@@ -1,0 +1,6 @@
+colorama
+threading
+requests
+os
+time
+sys
