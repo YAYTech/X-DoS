@@ -47,6 +47,11 @@ def print_menu():
 		time.sleep(1)
 		saldiri_yap()
 
+	if secenek == "2":
+		print("[*] Versyon kontrolü yapılıyor...")
+		time.sleep(1)
+		versiyon_kontrolu()
+
 	if secenek == "3":
 		print("[*] Çıkış yapılıyor ...")
 		time.sleep(1)
@@ -109,5 +114,10 @@ def istek_at(hedef, sayi):
 		if x > sayi:
 			print("[+] Saldırı başarılı bir şekilde bitti.")
 			break
+
+def versiyon_kontrolu():
+	with open("version.txt","r") as file:
+		versiyon = file.readline()
+		print(f"[*] Versiyon: {versiyon}")
 
 root_kontrolu_yap()
